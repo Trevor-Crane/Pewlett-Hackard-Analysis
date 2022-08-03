@@ -157,3 +157,19 @@ FROM current_emp as ce
 		ON (ce.emp_no = de.emp_no)
 	INNER JOIN departments AS d
 		ON (de.dept_no = d.dept_no);
+
+-- Sales team info
+SELECT emp_no,
+	first_name,
+	last_name, 
+	dept_name
+FROM dept_info
+WHERE dept_name = ('Sales');
+
+-- Sales and Development teams
+SELECT emp_no,
+	first_name,
+	last_name, 
+	dept_name
+FROM dept_info
+WHERE dept_name IN ('Sales', 'Development');
